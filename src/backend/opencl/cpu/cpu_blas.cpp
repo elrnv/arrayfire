@@ -55,7 +55,7 @@ using std::conditional;
 //                  const void *B, const int ldb, const void *beta,
 //                  void *C, const int ldc);
 #if defined(IS_OPENBLAS)
-    static const bool cplx_void_ptr = false;
+    static const bool cplx_void_ptr = true;
 #else
     static const bool cplx_void_ptr = true;
 #endif

@@ -31,7 +31,7 @@
 // if we're not dealing with openblas and use it where applicable
 #ifdef IS_OPENBLAS
     // blasint already defined
-    static const bool cplx_void_ptr = false;
+    static const bool cplx_void_ptr = true;
 #else
     using blasint = int;
     static const bool cplx_void_ptr = true;
