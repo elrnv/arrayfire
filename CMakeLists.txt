@@ -252,6 +252,8 @@ install(DIRECTORY "${ArrayFire_SOURCE_DIR}/LICENSES/"
     DESTINATION LICENSES
     COMPONENT licenses)
 
+if(BUILD_SHARED_LIBS)
+# This is disabled when building static libs
 foreach(backend CPU CUDA OpenCL Unified)
   string(TOUPPER ${backend} upper_backend)
   string(TOLOWER ${backend} lower_backend)
@@ -266,6 +268,7 @@ foreach(backend CPU CUDA OpenCL Unified)
             FILE cmake/ArrayFire${backend}Targets.cmake)
   endif()
 endforeach()
+endif()
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(

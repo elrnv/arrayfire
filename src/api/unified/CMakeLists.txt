@@ -78,6 +78,8 @@ if(AF_WITH_LOGGING)
       spdlog::spdlog)
 endif()
 
+set_target_properties(af PROPERTIES POSITION_INDEPENDENT_CODE ON)
+
 target_link_libraries(af
   PRIVATE
     cpp_api_interface
